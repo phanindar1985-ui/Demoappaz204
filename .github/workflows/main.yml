@@ -21,9 +21,11 @@ jobs:
       # 3️⃣ CONTEXT VARIABLES (github.*)
       - name: Show GitHub context
         run: |
-          echo "Repository: ${{ github.repository }}"
-          echo "Actor: ${{ github.actor }}"
+          echo "Build started in ${{ github.repository }} by ${{ github.actor }}"
+          echo "::debug::DOTNET_VERSION is $DOTNET_VERSION"
+          echo "::group::GitHub context"
           echo "Branch: ${{ github.ref_name }}"
+          echo "::endgroup::"
 
       - name: Checkout Code
         uses: actions/checkout@v3
