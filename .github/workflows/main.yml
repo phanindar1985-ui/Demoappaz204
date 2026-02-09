@@ -5,8 +5,15 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello World!"
-      - run: echo "Hello World!"
-      - run: ls -al
-      - run: pwd
+   steps:
+      - name: Run a one-line script
+        run: echo "Hello World!" #Directly run a command
+        
+      - name: List all files in the current directory
+        run: ls -al
+  
+      - name: Checkout code
+        uses: actions/checkout@v6.0.2
+     
+      - name: List all files in the repository
+        run: ls -al
