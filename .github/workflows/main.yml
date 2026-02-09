@@ -2,16 +2,13 @@ name: Demo Pipeline
  
 on: push
  
-
-  test:
-    runs-on: ubuntu-latest
-   steps:
+  steps:
       - name: Run a one-line script
         run: echo "Hello World!" #Directly run a command
-        
+
       - name: List all files in the current directory
         run: ls -al
-  
+     
       - name: Checkout code
         uses: actions/checkout@v6.0.2
      
