@@ -2,7 +2,7 @@ name: Demo Pipeline
  
 on: push
  
-jobs:
+
   test:
     runs-on: ubuntu-latest
    steps:
